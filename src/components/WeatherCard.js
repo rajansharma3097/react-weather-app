@@ -49,7 +49,6 @@ export default function WeatherCard({
     <Card className="weather-card-main">
       <Card.Content className="weather-card">
         <Card.Header className="weather-card-child">{city}</Card.Header>
-        <div className="icon-container">{weatherIcons}</div>
       </Card.Content>
       <Card.Content>
         <Feed>
@@ -67,7 +66,7 @@ export default function WeatherCard({
                 </div>
               </div>
 
-              <div className="weather-card">
+              <div className="weather-card weather-card-sun">
                 <div className="weather-card-child">
                   <b>Sunrise</b>:{" "}
                   {new Date(sunrise * 1000).toLocaleTimeString("en-IN")}
@@ -81,6 +80,7 @@ export default function WeatherCard({
           </Feed.Event>
         </Feed>
       </Card.Content>
+      <div className="icon-container">{weatherIcons}</div>
     </Card>
   );
 }

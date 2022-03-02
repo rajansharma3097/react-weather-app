@@ -33,6 +33,8 @@ function App() {
         `${process.env.REACT_APP_API_URL}/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minute&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       );
 
+      console.log(forecast);
+
       setLoading(false);
       setTemperature(currentWeather.data.main.temp);
       setSunset(currentWeather.data.sys.sunset);
@@ -40,6 +42,7 @@ function App() {
       setHumidity(currentWeather.data.main.humidity);
       setCity(currentWeather.data.name);
       setIcon(currentWeather.data.weather[0].main);
+      forecast.data.daily.shift();
       setForecast(forecast.data.daily);
     };
 
